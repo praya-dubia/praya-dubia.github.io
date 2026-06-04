@@ -4,36 +4,86 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>praya_dubiaのポートフォリオ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+      /* 海っぽい深みのある青のグラデーション背景 */
+      .sea-background {
+        background: linear-gradient(180deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        color: #ffffff; /* 文字を白にして読みやすくします */
+      }
+      
+      /* 画像を入れるためのダミー枠線のデザイン（授業のborderの応用） */
+      .work-image-box {
+        width: 100%;
+        height: 200px;
+        border: 2px dashed #cccccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        color: #666666;
+      }
+    </style>
   </head>
-  <body> <h1>praya_dubia</h1>
-    <h2>About</h2>
-    <p>
-      praya_dubiaという名前は世界最長級クラゲの学名。<br>
-      主に映像製作をしています。音楽やゲームの製作、CGのモデリングなど幅広く勉強中!
-    </p>
+  <body class="bg-light">
 
-    <h3>Profile</h3>
-    <ul>
-      <li>praya_dubia</li>
-      <li>東京都</li>
-      <li>Blender/Premiere Pro/Aftter Effect/Unity</li>
-    </ul>
+    <div class="container my-5" style="max-width: 900px;">
+      
+      <h1 class="display-4 fw-bold mb-4">praya_dubia</h1>
 
-    <h3>Works</h3>
-    <p>製作したもの</p>
-    <p>CICERO OSAKA映像コンテスト最優秀賞</p>
+      <div class="sea-background p-4 rounded shadow mb-5">
+        <h2>About</h2>
+        <p>
+          praya_dubiaという名前は世界最長級クラゲの学名。<br>
+          主に映像製作をしています。音楽やゲームの製作、CGのモデリングなど幅広く勉強中!
+        </p>
 
-    <h3>History</h3>
-    <p>経歴</p>
-    <table>
-      <tr>
-        <th>2024 年</th>
-        <td>学校法人角川ドワンゴ学園 <a href="https://nnn.ed.jp/">N高等学校</a> 卒業</td>
-      </tr>
-      <tr>
-        <th>2024年</th>
-        <td>CICERO OSAKA映像コンテスト最優秀賞</td>
-      </tr>
-    </table>
+        <h3 class="mt-4">Profile</h3>
+        <ul class="list-unstyled"> <li><strong>名前：</strong>praya_dubia</li>
+          <li><strong>所在地：</strong>東京都</li>
+          <li><strong>スキル：</strong>Blender / Premiere Pro / After Effects / Unity</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow mb-5">
+        <h3>Works</h3>
+        <div class="row align-items-center mt-3">
+          
+          <div class="col-md-7">
+            <p class="fw-bold fs-5">CICERO OSAKA映像コンテスト最優秀賞</p>
+            <p>
+              コンテストで最優秀賞をいただいた映像作品です。<br>
+              <a href="https://example.com/your-work" target="_blank" class="btn btn-primary mt-2">
+                製作物のリンクを見る
+              </a>
+            </p>
+          </div>
+          
+          <div class="col-md-5">
+            <div class="work-image-box rounded">
+              <span></span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <h3>History</h3>
+        <table class="table table-striped mt-3">
+          <tr>
+            <th style="width: 20%;">2024 年</th>
+            <td>学校法人角川ドワンゴ学園 <a href="https://nnn.ed.jp/" target="_blank">N高等学校</a> 卒業</td>
+          </tr>
+          <tr>
+            <th>2024年</th>
+            <td>CICERO OSAKA映像コンテスト最優秀賞</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
   </body>
 </html>
