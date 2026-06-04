@@ -4,16 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>praya_dubiaのポートフォリオ</title>
+    <!-- Bootstrapの導入 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
       /* 海っぽい深みのある青のグラデーション背景 */
       .sea-background {
         background: linear-gradient(180deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-        color: #ffffff; /* 文字を白にして読みやすくします */
+        color: #ffffff;
       }
       
-      /* 画像を入れるためのダミー枠線のデザイン（授業のborderの応用） */
+      /* 画像を入れるためのダミー枠線のデザイン */
       .work-image-box {
         width: 100%;
         height: 200px;
@@ -28,10 +29,12 @@
   </head>
   <body class="bg-light">
 
+    <!-- 全体を中央に寄せるコンテナ -->
     <div class="container my-5" style="max-width: 900px;">
       
       <h1 class="display-4 fw-bold mb-4">praya_dubia</h1>
 
+      <!-- AboutとProfile（海っぽい背景） -->
       <div class="sea-background p-4 rounded shadow mb-5">
         <h2>About</h2>
         <p>
@@ -40,35 +43,71 @@
         </p>
 
         <h3 class="mt-4">Profile</h3>
-        <ul class="list-unstyled"> <li><strong>名前：</strong>praya_dubia</li>
+        <ul class="list-unstyled">
+          <li><strong>名前：</strong>praya_dubia</li>
           <li><strong>所在地：</strong>東京都</li>
           <li><strong>スキル：</strong>Blender / Premiere Pro / After Effects / Unity</li>
         </ul>
       </div>
 
+      <!-- Worksセクション -->
       <div class="bg-white p-4 rounded shadow mb-5">
         <h3>Works</h3>
-        <div class="row align-items-center mt-3">
-          
+        <p class="text-muted">製作したもの</p>
+
+        <!-- -------------------------------------------------- -->
+        <!-- ▼ 作品1つ目（映像コンテスト） -->
+        <!-- -------------------------------------------------- -->
+        <div class="row align-items-center mt-4 border-bottom pb-4">
+          <!-- 左側：説明文 -->
           <div class="col-md-7">
-            <p class="fw-bold fs-5">CICERO OSAKA映像コンテスト最優秀賞</p>
+            <h4 class="fs-5 fw-bold">CICERO OSAKA PVコンテスト最優秀賞</h4>
             <p>
               コンテストで最優秀賞をいただいた映像作品です。<br>
-              <a href="https://youtu.be/MydTSY9llHs?si=i3zzCtybOR8tu5i9" target="_blank" class="btn btn-primary mt-2">
-                製作物のリンクを見る
+              <a href="https://example.com/your-work1" target="_blank" class="btn btn-primary btn-sm mt-2">
+                作品のリンクを見る
               </a>
             </p>
           </div>
-          
+          <!-- 右側：画像表示場所 -->
           <div class="col-md-5">
+            <!-- 【画像変更のやり方】 -->
+            <!-- 画像を準備したら、下の <div class="work-image-box"> から </div> までを消して、 -->
+            <!-- <img src="images/work1.jpg" class="img-fluid rounded shadow-sm" alt="作品1"> に書き換えます -->
             <div class="work-image-box rounded">
-              <span></span>
+              <span>【作品1の画像エリア】</span>
             </div>
           </div>
-          
         </div>
+
+        <!-- -------------------------------------------------- -->
+        <!-- ▼ 作品2つ目（新しく追加した場所） -->
+        <!-- -------------------------------------------------- -->
+        <div class="row align-items-center mt-4">
+          <!-- 左側：説明文 -->
+          <div class="col-md-7">
+            <h4 class="fs-5 fw-bold">ここに2つ目の作品のタイトル</h4>
+            <p>
+              ここに作品の説明を書きます（例：BlenderでモデリングしたCG作品、Unityで作ったミニゲームなど）。<br>
+              <a href="https://example.com/your-work2" target="_blank" class="btn btn-primary btn-sm mt-2">
+                作品のリンクを見る
+              </a>
+            </p>
+          </div>
+          <!-- 右側：画像表示場所 -->
+          <div class="col-md-5">
+            <!-- 【画像変更のやり方】 -->
+            <!-- 2つ目の画像を準備したら、下の <div class="work-image-box"> から </div> までを消して、 -->
+            <!-- <img src="images/work2.jpg" class="img-fluid rounded shadow-sm" alt="作品2"> に書き換えます -->
+            <div class="work-image-box rounded">
+              <span>【作品2の画像エリア】</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
+      <!-- Historyセクション -->
       <div class="bg-white p-4 rounded shadow">
         <h3>History</h3>
         <table class="table table-striped mt-3">
@@ -78,7 +117,7 @@
           </tr>
           <tr>
             <th>2024年</th>
-            <td>CICERO OSAKA映像コンテスト最優秀賞</td>
+            <td>CICERO OSAKA PVコンテスト最優秀賞</td>
           </tr>
         </table>
       </div>
