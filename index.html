@@ -157,21 +157,29 @@
 
     </div>
 
-    <script>
+<script>
       const images = document.querySelectorAll('.clickable-img');
+      // Worksの枠（セクション）自体を取得します
+      const worksCard = document.querySelector('.glass-card');
 
       images.forEach(function(img) {
         img.addEventListener('click', function() {
-          // すでに拡大されている状態（is-zoomedを持っている）なら、それを外して終了
           if (img.classList.contains('is-zoomed')) {
+            // 縮小するときはクラスを外し、Worksの枠の重なり順も元に戻す
             img.classList.remove('is-zoomed');
+            worksCard.style.zIndex = 'auto';
+            worksCard.style.position = 'static';
           } else {
-            // 新しく拡大する場合：まず、すべての画像から一斉に is-zoomed クラスを消去する
+            // すべてを一斉リセット
             images.forEach(function(otherImg) {
               otherImg.classList.remove('is-zoomed');
             });
-            // その後、今クリックされた画像だけに is-zoomed クラスをつける
+            // 拡大するとき：今クリックされた画像を拡大する
             img.classList.add('is-zoomed');
+            
+            // 【重要】Worksの枠全体の重なり順を「100」にして、Historyよりも絶対上にします
+            worksCard.style.position = 'relative';
+            worksCard.style.zIndex = '100';
           }
         });
       });
