@@ -55,18 +55,17 @@
 
       /* 画像のアニメーション設定 */
       .clickable-img {
-        cursor: pointer; /* マウスを乗せたときに「手のひらマーク」にします */
-        transition: transform 0.3s ease, z-index 0s; /* 少しゆっくり（0.3秒）滑らかに動かします */
+        cursor: pointer;
+        transition: transform 0.3s ease, z-index 0s;
         position: relative;
         z-index: 1;
       }
 
-      /* 【変更】クリックされてこのクラスがついている時だけ、指定の倍率に拡大します */
-      /* 細部が見えやすいように、倍率を1.08から1.5に変更しました（数値を書き換えれば自由に変えられます） */
+      /* クリックされてこのクラスがついている時だけ、指定の倍率に拡大します */
       .clickable-img.is-zoomed {
-        transform: scale(1.5); 
-        z-index: 10; /* 拡大した画像が他の文字や枠線の下に隠れないように最前面に出します */
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important; /* 浮き上がって見えるように影を強くします */
+        transform: scale(2.0); 
+        z-index: 10;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
       }
     </style>
   </head>
@@ -159,14 +158,21 @@
     </div>
 
     <script>
-      // 画面内のすべての「clickable-img」クラスがついた画像を探してリスト（配列のようなもの）にします
       const images = document.querySelectorAll('.clickable-img');
 
-      // 見つかった画像の一枚一枚に、クリックイベントを設定します
       images.forEach(function(img) {
         img.addEventListener('click', function() {
-          // クリックされた画像に対して、is-zoomedクラスがあれば消し、なければ付けます（トグル処理）
-          img.classList.toggle('is-zoomed');
+          // すでに拡大されている状態（is-zoomedを持っている）なら、それを外して終了
+          if (img.classList.contains('is-zoomed')) {
+            img.classList.remove('is-zoomed');
+          } else {
+            // 新しく拡大する場合：まず、すべての画像から一斉に is-zoomed クラスを消去する
+            images.forEach(function(otherImg) {
+              otherImg.classList.remove('is-zoomed');
+            });
+            // その後、今クリックされた画像だけに is-zoomed クラスをつける
+            img.classList.add('is-zoomed');
+          }
         });
       });
     </script>
