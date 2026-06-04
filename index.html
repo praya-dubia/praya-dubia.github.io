@@ -53,13 +53,20 @@
         border-bottom: 2px solid #999999 !important;
       }
 
-      /* 【新機能】クリックすると拡大する画像のアニメーション設定 */
+      /* 画像のアニメーション設定 */
       .clickable-img {
         cursor: pointer; /* マウスを乗せたときに「手のひらマーク」にします */
-        transition: transform 0.2s ease; /* 大きさが変わる動きを0.2秒かけて滑らかにします */
+        transition: transform 0.3s ease, z-index 0s; /* 少しゆっくり（0.3秒）滑らかに動かします */
+        position: relative;
+        z-index: 1;
       }
-      .clickable-img:active {
-        transform: scale(1.08); /* クリックしている間だけ、元のサイズの1.08倍に拡大します */
+
+      /* 【変更】クリックされてこのクラスがついている時だけ、指定の倍率に拡大します */
+      /* 細部が見えやすいように、倍率を1.08から1.5に変更しました（数値を書き換えれば自由に変えられます） */
+      .clickable-img.is-zoomed {
+        transform: scale(1.5); 
+        z-index: 10; /* 拡大した画像が他の文字や枠線の下に隠れないように最前面に出します */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important; /* 浮き上がって見えるように影を強くします */
       }
     </style>
   </head>
@@ -150,6 +157,19 @@
       </div>
 
     </div>
+
+    <script>
+      // 画面内のすべての「clickable-img」クラスがついた画像を探してリスト（配列のようなもの）にします
+      const images = document.querySelectorAll('.clickable-img');
+
+      // 見つかった画像の一枚一枚に、クリックイベントを設定します
+      images.forEach(function(img) {
+        img.addEventListener('click', function() {
+          // クリックされた画像に対して、is-zoomedクラスがあれば消し、なければ付けます（トグル処理）
+          img.classList.toggle('is-zoomed');
+        });
+      });
+    </script>
 
   </body>
 </html>
