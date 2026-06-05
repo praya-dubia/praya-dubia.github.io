@@ -27,6 +27,12 @@
           radial-gradient(circle at 10% 60%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 2.5%);
       }
       
+      .sea-background {
+        background: linear-gradient(180deg, rgba(15,32,39,0.85) 0%, rgba(32,58,67,0.85) 100%);
+        color: #ffffff;
+        backdrop-filter: blur(5px);
+      }
+      
       .glass-card {
         background-color: rgba(255, 255, 255, 0.85) !important;
         backdrop-filter: blur(5px);
@@ -34,25 +40,19 @@
       }
 
       .works-grad-card {
-        background: linear-gradient(180deg, rgba(15,32,39,0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+        background: linear-gradient(180deg, rgba(15,32,39,0.95) 0%, rgba(255, 255, 255, 0.85) 7%, rgba(255, 255, 255, 0.85) 100%) !important;
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
-      .works-grad-card h3, .works-grad-card h4 {
+      .works-grad-card h3 {
         color: #ffffff;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
       }
 
       .works-grad-card .text-muted {
-        color: #e0e0e0 !important;
-      }
-
-      .works-grad-card p {
-        background: linear-gradient(180deg, #ffffff 0%, #333333 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: #333333;
+        color: #ffffff !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
       }
 
       .main-title {
@@ -86,7 +86,7 @@
       
       <h1 class="display-4 fw-bold mb-4 main-title">praya_dubia</h1>
 
-      <div class="glass-card p-4 rounded shadow mb-5">
+      <div class="sea-background p-4 rounded shadow mb-5">
         <h2>About</h2>
         <p>
           praya_dubiaという名前は世界最長級クラゲの学名から。<br>
@@ -94,7 +94,7 @@
         </p>
 
         <h3 class="mt-4">Profile</h3>
-        <ul class="list-unstyled mb-0">
+        <ul class="list-unstyled">
           <li><strong>名前：</strong>praya_dubia</li>
           <li><strong>所在地：</strong>東京都</li>
           <li><strong>スキル：</strong>Blender / Premiere Pro / After Effects / Unity</li>
